@@ -1,20 +1,20 @@
 import './BottomApp.css'
 import { useState } from 'react';
 
-function BottomApp() {
+function BottomApp({ minState, maxState }) {
     return (
         <div className="bottom-app">
-        <FactorInput index={ 0 } />
-        <FactorInput index={ 1 } />
+        <FactorInput index={ 0 } state={ minState } />
+        <FactorInput index={ 1 } state={ maxState } />
         <FormulaInput />
         <GoButton />
       </div>
     );
 }
 
-function FactorInput({ index }) {
+function FactorInput({ index, state }) {
 
-    var [ value, setValue ] = useState(index)
+    var [ value, setValue ] = state
     var [ style, setStyle ] = useState("normal-input")
   
     const handleChange = (event) => {

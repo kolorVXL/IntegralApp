@@ -1,5 +1,21 @@
-.graph{
-    background-color: #555555;
-    position: fixed;
+.graph-app {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 150px);
     bottom: 150px;
+    background-color: #ffffff;
+    
+}
+
+.focused-graph {
+    background-color: #333333;
+    bottom: 0;
+    position: absolute;
+}
+
+.graph {
+    background-color: #555555;
+    bottom: 0;
+    position: absolute;
 }

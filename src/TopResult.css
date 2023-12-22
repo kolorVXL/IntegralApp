@@ -6,7 +6,7 @@
     height: 80px;
     top: 5%;
     left: calc(50% - 120px);
-    
+    box-shadow: 0 0 10px 0 #00000066;
     background-color: #eeeeee;
     text-align: center;
     font-size: 30px;
@@ -14,4 +14,9 @@
     background-color: #eeeeee;
     color: #222222;
     line-height: 80px;
+}
+
+.top-slider {
+    width: 160px;
+    height: 40px;
 }
