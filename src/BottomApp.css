@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+.bottom-app {
+    height: 150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: #eeeeee;
+}
+
+.normal-input {
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    outline: none;
+    border: none;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #eeeeee;
+    color: #222222;
+    text-align: center;
+}
+
+.error-input {
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    outline: none;
+    border: none;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #eeeeee;
+    color: #660000;
+    text-align: center;
+}
+
+.factor {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+}
+
+.factor1 {
+    top: 80px;
+    left: 50px;
+}
+
+.factor2 {
+    top: 10px;
+    left: 50px;
+}
+
+.factor::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.normal-input:focus {
+    outline: none;
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+.error-input:focus {
+    outline: none;
+    background-color: #660000;
+    color: #eeeeee;
+}
+
+.formula {
+    position: absolute;
+    top: 30px;
+    left: 250px;
+    height: 90px;
+    width: calc(100% - 250px - 170px);
+}
+
+.go {
+    
+    transition-property: all;
+    transition-duration: 100ms;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 90px;
+    height: 90px;
+    background-color: #222222;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #eeeeee;
+    border: 0px;
+}
+
+.go:active {
+    background-color: #eeeeee;
+    color: #222222;
+}
