@@ -29,13 +29,28 @@ function TransferList(xmin, xmax, list) {
         if (xmin <= i && i <= xmax) {
             style = "focused-graph"
         }
-        return EachGraph(i, 1 / list.length, (e - min) / (max - min), style)
+        return EachGraph(i, 1 / list.length, (e - min) / (max - min), (0 - min) / (max - min) , style)
     })
 }
 
-function EachGraph(index, width, height, style) {
+function EachGraph(index, width, value, zero, style) {
+    var start = 0
+    var end = 0
+    if (zero < 0) {
+        start = 0
+        end = value
+    } else if (zero > 1) {
+        start = value
+        end = 1
+    } else if (zero < value) {
+        start = zero
+        end = value
+    } else {
+        start = value
+        end = zero
+    }
     return (
-        <div className={ style } style={{ left: `${width * index * 100}%`, width: `${width * 100}%`, height: `${height * 100}%` }}></div>
+        <div className={ style } style={{ left: `${width * index * 100}%`, width: `${width * 100}%`, height: `${(end - start) * 100}%`, bottom: `${start * 100}%` }}></div>
     );
 }
 

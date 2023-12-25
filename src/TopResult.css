@@ -3,7 +3,7 @@
 .top-result {
     position: absolute;
     width: 240px;
-    height: 80px;
+    height: 120px;
     top: 5%;
     left: calc(50% - 120px);
     box-shadow: 0 0 10px 0 #00000066;
@@ -13,10 +13,65 @@
     font-family: 'Ubuntu', sans-serif;
     background-color: #eeeeee;
     color: #222222;
-    line-height: 80px;
+    line-height: 180px;
 }
 
-.top-slider {
+.top-input {
+    position: absolute;
     width: 160px;
     height: 40px;
+    top: 10px;
+    left: calc(50% - 80px);
+    background-color: #eeeeee;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #eeeeee;
+    color: #222222;
+    outline: 0;
+    border: 0;
+}
+
+.top-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.normal-input {
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    outline: none;
+    border: none;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #eeeeee;
+    color: #222222;
+    text-align: center;
+}
+
+.error-input {
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    outline: none;
+    border: none;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #eeeeee;
+    color: #660000;
+    text-align: center;
+}
+
+.normal-input:focus {
+    outline: none;
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+.error-input:focus {
+    outline: none;
+    background-color: #660000;
+    color: #eeeeee;
 }

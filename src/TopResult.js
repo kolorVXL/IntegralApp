@@ -1,21 +1,38 @@
+import { useState } from "react";
 import "./TopResult.css"
-import Slider from "rc-slider";
-import 'rc-slider/assets/index.css'
 
-function TopResult({ value, state }) {
-    var [ num, setNum ] = state
+function TopResult({ value, func }) {
+
+    var [ style, setStyle ] = useState("normal-input")
+
     const handleChange = (e) => {
-        setNum(e.target.value)
-    };
+        func(e.target.value)
+        if (IsNumVaild(e.target.value)) {
+            setStyle("normal-input")
+        } else {
+            setStyle("error-input")
+        }
+    }
+
     return (
         <div className="top-result">
             <div>
                 {value}
             </div>
-            <Slider className="top-slider" min={ 10 } max={ 1000 } step={ 10 } onChange={ handleChange } value={ num } />
+            <input className={ `top-input ${style}` } type="number" onChange={ handleChange } />
         </div>
     );
 }
 
+
+function IsNumVaild(x) {
+    if (isNaN(parseInt(x))) {
+      return false;
+    }
+    if (x < 1 || x > 1024) {
+      return false;
+    }
+    return true;
+  }
 
 export default TopResult;

@@ -10,12 +10,10 @@
 
 .focused-graph {
     background-color: #333333;
-    bottom: 0;
     position: absolute;
 }
 
 .graph {
     background-color: #555555;
-    bottom: 0;
     position: absolute;
 }
