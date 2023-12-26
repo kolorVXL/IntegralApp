@@ -29,7 +29,7 @@ function IsNumVaild(x) {
     if (isNaN(parseInt(x))) {
       return false;
     }
-    if (x < 1 || x > 1024) {
+    if (x < 1 || x > 100000) {
       return false;
     }
     return true;

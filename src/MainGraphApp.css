@@ -4,16 +4,11 @@
     width: 100%;
     height: calc(100% - 150px);
     bottom: 150px;
-    background-color: #ffffff;
+    background-color: #222222;
     
 }
 
-.focused-graph {
-    background-color: #333333;
-    position: absolute;
-}
-
 .graph {
-    background-color: #555555;
+    background-color: #eeeeee;
     position: absolute;
 }

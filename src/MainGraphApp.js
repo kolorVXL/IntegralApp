@@ -1,16 +1,16 @@
 import "./MainGraphApp.css"
 
-function MainGraphApp({ min, max, list }) {
+function MainGraphApp({ list }) {
     return (
         <div className="graph-app">
             {
-                TransferList(min, max, list)
+                TransferList(list)
             }
         </div>
     );
 }
 
-function TransferList(xmin, xmax, list) {
+function TransferList(list) {
     var min = Number.MAX_VALUE
     var max = Number.MIN_VALUE
     list.forEach((e) => {
@@ -25,15 +25,11 @@ function TransferList(xmin, xmax, list) {
     min = min - (interval * 0.1)
     max = max + (interval * 0.1)
     return list.map((e, i) => {
-        var style = "graph"
-        if (xmin <= i && i <= xmax) {
-            style = "focused-graph"
-        }
-        return EachGraph(i, 1 / list.length, (e - min) / (max - min), (0 - min) / (max - min) , style)
+        return EachGraph(i / list.length, (i + 1) / list.length, (e - min) / (max - min), (0 - min) / (max - min))
     })
 }
 
-function EachGraph(index, width, value, zero, style) {
+function EachGraph(first, second, value, zero) {
     var start = 0
     var end = 0
     if (zero < 0) {
@@ -50,7 +46,7 @@ function EachGraph(index, width, value, zero, style) {
         end = zero
     }
     return (
-        <div className={ style } style={{ left: `${width * index * 100}%`, width: `${width * 100}%`, height: `${(end - start) * 100}%`, bottom: `${start * 100}%` }}></div>
+        <div className="graph" style={{ left: `${first * 100}%`, right: `${(1 - second) * 100}%`, height: `${(end - start) * 100}%`, bottom: `${start * 100}%` }}></div>
     );
 }
 
